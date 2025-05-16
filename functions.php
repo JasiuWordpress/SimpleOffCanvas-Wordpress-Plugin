@@ -13,21 +13,6 @@ function create_files_callback($input){
         }
     }
 
-
-function update_fils_callback($input){
-    foreach ($input as $filename => $content) {
-            $folder = plugin_dir_path(__FILE__) . 'Assets/custom_css_menus';
-         $filepath = $folder . '/' . $filename;
-        file_put_contents($filepath, $content);
-
-}
-   return $input;
-}
-
-    
-
-
-
     if(is_array($input)){
         foreach($input as $in){
             $name = sanitize_file_name($in);
@@ -49,6 +34,16 @@ function update_fils_callback($input){
         }
     }
     return $input; 
+}
+
+function update_fils_callback($input){
+    foreach ($input as $filename => $content) {
+            $folder = plugin_dir_path(__FILE__) . 'Assets/custom_css_menus';
+         $filepath = $folder . '/' . $filename;
+        file_put_contents($filepath, $content);
+
+}
+   return $input;
 }
 
 
