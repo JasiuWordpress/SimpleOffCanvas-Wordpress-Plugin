@@ -29,7 +29,7 @@ So, make sure to assign a separate, unused class for popup initialization – on
     
     */
 
-    @media (max-width: 1024px) {
+    @media (max-width: 768px) {
         .{$name} {
             position: relative;
             max-height: 60px !important;

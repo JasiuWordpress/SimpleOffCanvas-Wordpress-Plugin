@@ -9,11 +9,8 @@ const close_btns = SimpleOffCanvasData.close_btns;
 
 
 const offcanvas_function = function(array){
-
     let i = 0;
-
     array.forEach(ar => {
-
         let offcanvas_wrap = document.createElement('div');
         offcanvas_wrap.classList.add('offcanvas_wrap_'+klas_to_use_array[i]);
         offcanvas_wrap.setAttribute('aria-hidden','true');
@@ -77,7 +74,46 @@ const offcanvas_function = function(array){
 }
 
 
+const  offcanvas_function_undo = function(array) {
+    let i = 0;
+    array.forEach(ar => {
+        const classname = klas_to_use_array[i];
+
+        // znajdź open button
+        const openBtn = document.querySelector('.open_' + classname);
+        if (openBtn) {
+            const originalParent = openBtn.parentNode;
+
+            // znajdź wrap
+            const wrap = document.querySelector('.offcanvas_wrap_' + classname);
+            if (wrap) {
+                const body = wrap.querySelector('.offcanvas_body_' + klasy[i]);
+                if (body && body.contains(ar)) {
+                    // przywróć element przed open button
+                    originalParent.insertBefore(ar, openBtn);
+                }
+
+                // usuń wrap
+                wrap.remove();
+            }
+
+            // usuń open button
+            openBtn.remove();
+
+            // przywróć oryginalną klasę
+            ar.classList.add(classname);
+            ar.classList.remove('hide-before');
+        }
+
+        i++;
+    });
+}
+
+
+
+
 document.addEventListener('DOMContentLoaded',() => {
+      let popup_created = false;
     for (klasa of klasy) {
         let item = document.querySelector('.'+klasa)
         if(item){
@@ -85,9 +121,26 @@ document.addEventListener('DOMContentLoaded',() => {
         klas_to_use_array.push(klasa); 
         }
     }
+    if (window.innerWidth <= 768) {
     setTimeout(() => {
           offcanvas_function(klas_array);
     }, 500);
+      popup_created = true;
+  }
+  window.addEventListener('resize', () => { 
+    if (window.innerWidth <= 768 && popup_created != true) {
+         setTimeout(() => {
+          offcanvas_function(klas_array);
+         }, 500);
+           popup_created = true;
+    }
+
+     if (window.innerWidth >= 768 && popup_created == true) {
+        offcanvas_function_undo(klas_array);
+          popup_created = false;
+    }
+
+  })
   
 })
 
