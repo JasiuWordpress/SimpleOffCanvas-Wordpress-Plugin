@@ -55,5 +55,8 @@ add_action('admin_init', function () {
         'sanitize_callback' => 'update_fils_callback'
         ]);
 
+        register_setting('simpleoffcanvas_group', 'close_btn');
+        register_setting('simpleoffcanvas_group', 'open_btn');
+
 
     });

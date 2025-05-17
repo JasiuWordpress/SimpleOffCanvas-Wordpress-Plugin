@@ -6,6 +6,17 @@ document.addEventListener('DOMContentLoaded',(event) => {
     let $html = `<input type="text" name="simpleoffcanvas_class[]" placeholder="Write your's div class without a dot.">`;
     let no_divs_p = document.querySelector('.no_divs_p');
 
+    const delete_btns = document.querySelectorAll('.delete_offcanvas');
+
+    if(delete_btns){
+        delete_btns.forEach(dbtn =>{
+            dbtn.addEventListener('click', () => {
+                let parent = dbtn.closest('.classes_wrap');
+                parent.remove();
+            })
+        })
+    }
+
     if(add_new_btn){
         add_new_btn.addEventListener('click', (event) => {
              event.preventDefault();
@@ -51,11 +62,11 @@ document.addEventListener('DOMContentLoaded', function () {
         textareas.forEach(textarea => {
             wp.codeEditor.initialize(textarea, {
                 codemirror: {
-                    mode: 'css',              // lub 'javascript', 'htmlmixed', itd.
-                    lineNumbers: false,       // wyłącz numerowanie
-                    matchBrackets: false,     // wyłącz podświetlanie
-                    styleActiveLine: false,   // wyłącz aktywną linię
-                    autoCloseBrackets: true   // ✅ zostaje!
+                    mode: 'css',             
+                    lineNumbers: false,      
+                    matchBrackets: false,     
+                    styleActiveLine: false,   
+                    autoCloseBrackets: true   
                 }
             });
         });

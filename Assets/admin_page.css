@@ -47,6 +47,7 @@
 }
 
 
+
 .class_parent {
     height:70px;
     display:flex;
@@ -101,3 +102,29 @@
     width:100%!important;
     margin-top:20px;
  }
+
+
+
+
+.simpleoffcanvas_custom_div_menu {
+    position: relative;
+}
+
+
+ .delete_offcanvas {
+    background-color: #d32f2f;
+    position:absolute;
+    right:40px;
+    bottom:0px; /* mocna czerwień */
+    color: white;
+    border: none;
+    padding: 8px 16px;
+    border-radius: 4px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.delete_offcanvas:hover {
+    background-color: #b71c1c; /* ciemniejszy odcień czerwieni przy najechaniu */
+}
