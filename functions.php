@@ -34,9 +34,10 @@ So, make sure to assign a separate, unused class for popup initialization – on
             position: relative;
             max-height: 60px !important;
             overflow: hidden !important;
+             border-radius: 20px !important;
         }
         .{$name}::before {
-            content: '';
+            content: ''!important;
             position: absolute !important;
             top: 0 !important;
             left: 0 !important;
@@ -44,10 +45,10 @@ So, make sure to assign a separate, unused class for popup initialization – on
             height: 60px !important;
             backdrop-filter: blur(15px) !important;
             -webkit-backdrop-filter: blur(5px) !important;
-            background-color: rgba(255, 255, 255, 0.4) !important;
+            background-color: rgba(255, 255, 255, 0.85) !important;
             z-index: 9999 !important;
             pointer-events: all !important;
-            border-radius: 20px;
+            border-radius: 20px !important;
         }
         .{$name}::after {
             content: '';
@@ -89,6 +90,14 @@ So, make sure to assign a separate, unused class for popup initialization – on
         }
          .hide-before::after {
         content:none!important;
+        }
+
+         @keyframes spin {
+        0% {
+            transform: rotate(0deg);
+        }
+        100% {
+            transform: rotate(360deg);
         }
 }
     ";
