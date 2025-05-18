@@ -114,7 +114,8 @@ const  offcanvas_function_undo = function(array) {
 
 document.addEventListener('DOMContentLoaded',() => {
       let popup_created = false;
-    for (klasa of klasy) {
+      let klasy_array = Array.from(klasy);//wymuszenie array'a dla mozliwosci petli for of
+    for (klasa of klasy_array) {
         let item = document.querySelector('.'+klasa)
         if(item){
         klas_array.push(item);

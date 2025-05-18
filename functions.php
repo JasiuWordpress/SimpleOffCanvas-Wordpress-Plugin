@@ -115,14 +115,16 @@ function create_files_callback($input){
   
 
     if(is_array($input)){
-        foreach($input as $in){
+        foreach($input as $key => $in){
             $name = sanitize_file_name($in);
-            if(!empty($name)){
+            if(!empty($name) && $name != ""){
                 $folder = plugin_dir_path(__FILE__) . 'Assets/custom_css_menus';
                 $filepath = $folder . '/' . $name . '.css';
                   if(!file_exists($filepath)){
                     file_put_contents($filepath, css_first_content($name));
                   }
+            }else{
+                unset( $input[ $key ] );
             }
         }
     } else {
