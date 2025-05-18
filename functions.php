@@ -73,6 +73,7 @@ So, make sure to assign a separate, unused class for popup initialization – on
             pointer-events: none;
             background-color: black;
             transition: 0.7s ease;
+            overflow-y:auto!important;
         }
 
         .offcanvas_wrap_".$name."[aria-hidden=\"false\"] {
@@ -84,6 +85,7 @@ So, make sure to assign a separate, unused class for popup initialization – on
             transition:  0.7s ease;
             z-index: 9999;
             background-color: black;
+             overflow-y:auto!important;
         }
         .hide-before::before {
         content:none!important;
