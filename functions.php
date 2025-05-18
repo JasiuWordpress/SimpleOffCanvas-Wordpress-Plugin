@@ -247,7 +247,7 @@ add_action('wp_enqueue_scripts', 'simpleoffcanvas_script');
 function simpleoffcanvas_script(){
       wp_enqueue_script(
         'simple_offcanvas_js', 
-        plugin_dir_url(__FILE__) . 'assets/offcanvas.js'
+        plugin_dir_url(__FILE__) . 'Assets/offcanvas.js'
     );
 
 //wysylanie klas do jsa - offcanvas

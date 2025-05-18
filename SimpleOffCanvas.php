@@ -10,12 +10,12 @@ function admin_css_enque() {
     // CSS do <head>
     wp_enqueue_style(
         'admin_css_simpleoffcanvas', // unikalna nazwa
-        plugin_dir_url(__FILE__) . 'assets/admin_page.css'
+        plugin_dir_url(__FILE__) . 'Assets/admin_page.css'
     );
 
       wp_enqueue_script(
         'admin_js_simpleoffcanvas', // unikalna nazwa
-        plugin_dir_url(__FILE__) . 'assets/admin_page.js'
+        plugin_dir_url(__FILE__) . 'Assets/admin_page.js'
     );
 }
 
