@@ -71,7 +71,7 @@ So, make sure to assign a separate, unused class for popup initialization – on
             height: 100vh;
              z-index: 9999;
             pointer-events: none;
-            background-color: black;
+            background-color: /* popup background */
             transition: 0.7s ease;
             overflow-y:auto!important;
         }
@@ -84,7 +84,7 @@ So, make sure to assign a separate, unused class for popup initialization – on
             height: 100vh;
             transition:  0.7s ease;
             z-index: 9999;
-            background-color: black;
+            background-color: white; /* popup background */
              overflow-y:auto!important;
         }
         .hide-before::before {

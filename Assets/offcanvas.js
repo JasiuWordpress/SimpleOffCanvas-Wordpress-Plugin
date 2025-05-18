@@ -36,7 +36,7 @@ const offcanvas_function = function(array){
         }
  
       
-
+        let parent_ar = ar.parentNode;
         ar.parentNode.insertBefore(newDiv, ar);
 
         let offcanvas_body = document.createElement('div');
@@ -48,7 +48,7 @@ const offcanvas_function = function(array){
         ar.classList.add('hide-before');
 
         ar.classList.remove(klas_to_use_array[i]);
-        document.body.appendChild(offcanvas_wrap);
+         parent_ar.appendChild(offcanvas_wrap);
 
         close_btn.addEventListener('click',() => {
             att =  offcanvas_wrap.getAttribute('aria-hidden');
