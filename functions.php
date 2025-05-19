@@ -1,4 +1,6 @@
 <?php
+if (!defined('ABSPATH')) exit;
+
 function css_first_content($name) {
     return "
     /* Style your div here!
